@@ -14,7 +14,9 @@ import TakeTest from './scenes/quizes/TakeTest';
 import TestResult from './scenes/quizes/TestResult';
 import ProtectedRoute from './components/ProtectedRoute';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import axios from "axios";
 
+axios.defaults.baseURL = "https://learning-management-system-6hi7.onrender.com";
 
 function App() {
   const location = useLocation();
