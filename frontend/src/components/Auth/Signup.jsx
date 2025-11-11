@@ -36,7 +36,12 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const response =await axios.post('/api/auth/signup',formValues);
+      //const response =await axios.post('/api/auth/signup',formValues);
+      console.log('API Base URL:', process.env.REACT_APP_API_URL);
+      const response = await axios.post(
+  `${process.env.REACT_APP_API_URL}/api/auth/signup`,
+  formValues
+);
       const data =  response.data;
       setAlert({ show: true, type: 'success', message: 'Signup successful! You will be redirected to the login page.' });
       setTimeout(()=>{
